@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -142,11 +141,10 @@
                     return;
                 }
 
-                // Receipt scan
+                // Updated to expect 4-digit prefix
                 const match = input.match(/^(\d{4})-(\d{7})$/);
-
                 if (!match) {
-                    receiptError.textContent = "Invalid format. Use #####-####### or 7-digit RX.";
+                    receiptError.textContent = "Invalid format. Use ####-####### or 7-digit RX.";
                     barcodeInput.focus();
                     return;
                 }
@@ -181,7 +179,7 @@
             }
         });
 
-        // F10: Clear all and suppress default
+        // F6: Clear all and suppress default
         document.addEventListener("keydown", function(e) {
             if (e.key === "F6") {
                 e.preventDefault();
